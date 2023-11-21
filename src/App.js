@@ -1,12 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './components/navbar/navbar/Navbar';
+import Main from './components/main/Main';
+import Footer from './components/footer/Footer';
 
-function App() {
+const App = () => {
   return (
-    <div className='App'>
-      <h1>DEXPALL APP</h1>
-    </div>
+    <>
+      <Navbar />
+      <Main />
+      {/* <Header />
+      <Search />
+      <Posts /> */}
+      <Footer />
+    </>
   );
-}
+};
 
 export default App;
