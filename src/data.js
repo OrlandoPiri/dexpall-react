@@ -49,6 +49,7 @@ export const navLinks = [
     icon: <FontAwesomeIcon icon={faGlobe} />,
     dropdown: <FontAwesomeIcon icon={faCaretDown} />,
     text: 'Select Language',
+    url: '/languages',
   },
   {
     id: 2,
@@ -56,6 +57,7 @@ export const navLinks = [
     icon: <FontAwesomeIcon icon={faBell} />,
     dropdown: '',
     text: 'Notification',
+    url: 'notificantion',
     // dropdown: <FontAwesomeIcon icon={faCaretDown} />,
   },
   {
@@ -64,14 +66,15 @@ export const navLinks = [
     icon: <FontAwesomeIcon icon={faUser} />,
     dropdown: <FontAwesomeIcon icon={faCaretDown} />,
     text: 'Login/Register',
+    url: 'languages',
   },
 ];
 
 export const footerLinks = [
-  { id: 1, classs: 'link', text: 'about' },
-  { id: 2, classs: 'link', text: 'terms of use' },
-  { id: 3, classs: 'link', text: 'privacy policy' },
-  { id: 4, classs: 'link', text: 'contact us' },
+  { id: 1, text: 'about', url: '/about' },
+  { id: 2, text: 'terms of use', url: '/terms' },
+  { id: 3, text: 'privacy policy', url: '/privacy' },
+  { id: 4, text: 'contact us', url: '/contact' },
 ];
 
 // ********* BACKROADS APP **************

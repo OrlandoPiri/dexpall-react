@@ -7,10 +7,17 @@ const Footer = () => {
       <div className='footer-container'>
         <ul className='footer-links'>
           {footerLinks.map((page) => {
-            const { id, classs, text } = page;
+            const { id, text, url } = page;
             return (
-              <li key={id} className={classs}>
-                {text}
+              // <a href={url}>
+              //   <li key={id} className={classs}>
+              //     {text}
+              //   </li>
+              // </a>;
+              // alteerna
+              <li key={id} className='link'>
+                {' '}
+                <a href={url}>{text}</a>
               </li>
             );
           })}

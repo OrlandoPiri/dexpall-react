@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-
 import {
   FaBars,
   FaAlignLeft,
@@ -16,40 +14,50 @@ import {
 import './Navbar.css';
 import logo from '../../../images/favicon_io (2)/favicon.ico';
 import { navLinks } from '../../../data';
-import MenuBox from '../MenuBox';
+import Sidebar from '../Sidebar';
+import { useGlobalContext } from '../../../Context';
+
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { openSidebar, isSidebarOpen } = useGlobalContext();
 
   return (
-    <nav className='navbar'>
+    <nav>
       <div className='nav-center'>
         <div className='nav-header'>
           <button className='btn nav-logo'>
             <img src={logo} alt='versa' />
             versa{' '}
           </button>{' '}
-          <button
-            type='button'
-            className='nav-toggle'
-            id='nav-toggle'
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <FaTimes /> : <FaBars />}
+          <button className='nav-toggle' onClick={openSidebar}>
+            {<FaBars />}
           </button>
-          <div className={isOpen ? 'menu-box active' : 'menu-box'}>
-            <MenuBox />
-          </div>
-          <div className='icons-container'>
-            {navLinks.map((link) => {
-              return (
-                <button key={link.id} className={link.class}>
+          {/* <div className={isOpen ? 'menu-box active' : 'menu-box'}>
+            <Sidebar />
+          </div> */}
+        </div>
+        {isSidebarOpen && <Sidebar />}
+        <div className='icons-container'>
+          {navLinks.map((link) => {
+            return (
+              <button key={link.id} className={link.class}>
+                {link.icon}
+                {link.dropdown}
+              </button>
+            );
+          })}
+        </div>
+        {/* <ul className='icons-container'>
+          {navLinks.map((link) => {
+            return (
+              <li key={link.id}>
+                <a href='SOME STUFF' className={link.class}>
                   {link.icon}
                   {link.dropdown}
-                </button>
-              );
-            })}
-          </div>
-        </div>
+                </a>
+              </li>
+            );
+          })}
+        </ul> */}
       </div>{' '}
     </nav>
   );

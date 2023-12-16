@@ -1,138 +1,169 @@
 /* add :not(.nav-logo) to img */
 
-.navbar {
-  position: fixed;
-  display: block;
+nav {
+  background: var(--backgroundColor);
+  box-shadow: var(--light-shadow);
   z-index: 3;
   top: 0;
   left: 0;
-  width: 100%;
-  /* background: var(--grey-200); */
-  background-color: var(--backgroundColor);
-  box-shadow: var(--light-shadow);
   height: 5rem;
-  align-items: center;
-  /* border-bottom: transparent; */
 }
-
 .nav-center {
-  justify-content: space-between;
-  width: 90vw;
   height: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
 }
 .nav-header {
   align-items: center;
   position: relative;
   display: flex;
   justify-content: space-between;
+  /* justify-self: stretch; */
+  height: 100%;
 }
 .nav-logo {
   display: grid;
   width: fit-content;
   text-transform: uppercase;
   flex-wrap: wrap;
-  padding-top: 6px;
+  /* padding-top: 6px; */
   align-items: center;
-  color: var(--primary-600);
+  align-self: center;
+  color: var(--primary-500);
   font-weight: 700;
   margin-top: 2px;
   border: none;
+  margin-left: 0.5rem;
 }
 .nav-logo:hover {
   cursor: pointer;
   box-shadow: var(--dark-shadow);
+  color: var(--ocean-800);
+}
+.nav-logo img {
+  box-shadow: var(--light-shadow);
 }
 .nav-toggle {
   font-size: 1.875rem;
   background: transparent;
-  color: var(--primary-50);
+  color: var(--primary-500);
   height: 4rem;
   align-content: center;
   padding: 3px 5px;
   height: 50px;
   width: 49px;
-
-  /* border-style: none; */
+  border-style: none;
 }
 .nav-toggle:hover {
   cursor: pointer;
-  scale: 1.05;
-  color: var(--primary-500);
+  scale: 1.1;
+  color: var(--primary-800);
   transition: var(--transition);
   border: none;
 }
-
 .icons-container {
   display: none;
-  align-items: center;
-  justify-content: end;
-  position: absolute;
-  right: 0;
-  margin-right: auto;
-
-  /* font-size: 1.875rem; */
 }
 
-.lang-icons {
-  /* display: flex; */
-  font-size: 1.275rem;
-  padding: 6px 0px;
-  background: transparent;
-  color: var(--primary-500);
-  margin-right: 50px;
-  height: 40px;
-  width: 40px;
-  border: none;
-}
-
-.bell-icon {
-  font-size: 1.445rem;
-  background: transparent;
-  color: var(--primary-500);
-  margin-right: 50px;
-  height: 40px;
-  width: 40px;
-  border: none;
-}
-
-.user-icons {
-  justify-content: flex-end;
-  /* justify-items: end; */
-  align-items: center;
-  font-size: 1.275rem;
-  padding: 5px 0px;
-  background: transparent;
-  color: var(--primary-500);
-  margin-right: 0px;
-  height: 40px;
-  width: 40px;
-  border: none;
-}
-.lang-icons:hover,
-.bell-icon:hover,
-.user-icons:hover {
-  cursor: pointer;
-  background: transparent;
-  color: var(--ocean-500);
-  border: none;
-  scale: 1.1;
-  transform: var(--transition);
-  box-shadow: var(--dark-shadow);
-}
 @media screen and (min-width: 692px) {
+  .nav-center {
+    width: 99vw;
+    height: 100%;
+    margin: 0 auto;
+  }
+  .nav-header {
+    align-items: center;
+    justify-content: start;
+    width: max-content;
+    height: 100%;
+    left: 1rem;
+  }
   .nav-toggle {
     display: none;
   }
+
   .icons-container {
     display: flex;
+    align-items: center;
+    height: 5rem;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1rem;
+  }
+
+  .lang-icons {
+    /* display: flex; */
+    font-size: 1.275rem;
+    padding: 6px 0px;
+    background: transparent;
+    color: var(--primary-500);
+    margin-right: 50px;
+    height: 40px;
+    width: 40px;
+    border: none;
+  }
+
+  .bell-icon {
+    font-size: 1.445rem;
+    background: transparent;
+    color: var(--primary-500);
+    margin-right: 50px;
+    height: 40px;
+    width: 40px;
+    border: none;
+  }
+
+  .user-icons {
+    justify-content: flex-end;
+    /* justify-items: end; */
+    align-items: center;
+    font-size: 1.275rem;
+    padding: 5px 0px;
+    background: transparent;
+    color: var(--primary-500);
+    margin-right: 0px;
+    height: 40px;
+    width: 40px;
+    border: none;
+  }
+  .lang-icons:hover,
+  .bell-icon:hover,
+  .user-icons:hover {
+    cursor: pointer;
+    color: var(--ocean-800);
+    border: none;
+    scale: 1.1;
+    transform: var(--transition);
+    /* background: transparent; */
+    /* box-shadow: var(--dark-shadow); */
   }
 }
 @media screen and (min-width: 992px) {
   .nav-center {
-    /* width: 100%;
-    justify-content: space-between; */
+    max-width: 1170px;
+    padding: 22px;
+  }
+  .nav-header {
+    align-items: center;
+    justify-content: start;
+    width: max-content;
+    height: 100%;
+    left: -1rem;
+  }
+  .nav-logo {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .icons-container {
+    right: 8rem;
+    padding: 0 2rem;
+  }
+  .icons-container a {
+    font-size: x-large;
+  }
+  .lang-icons,
+  .bell-icon {
+    margin-right: 5rem;
   }
 }
 /* .icons-container :hover {
